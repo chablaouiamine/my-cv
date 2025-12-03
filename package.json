@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pdf": "node generate_pdf.js"
+    "build-css": "npx tailwindcss -i ./input.css -o ./style.css --minify",
+    "watch-css": "npx tailwindcss -i ./input.css -o ./style.css --watch",
+    "pdf": "npm run build-css && node generate_pdf.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^24.32.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.18"
   }
 }
