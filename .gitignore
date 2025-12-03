@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# Generated Artifacts
+cv.pdf
+
+# System Files
+.DS_Store
+Thumbs.db

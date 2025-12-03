@@ -1,0 +1,16 @@
+{
+  "name": "my-cv",
+  "version": "1.0.0",
+  "description": "I have created a professional, ATS-friendly CV template for you.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pdf": "node generate_pdf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.32.0"
+  }
+}
