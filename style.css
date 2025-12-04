@@ -69,18 +69,19 @@ a:hover {
 
 .header-name-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 15px;
 }
 
 .header-photo {
     flex-shrink: 0;
+    margin-right: 20px;
 }
 
 .header-photo img {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--primary-color);
@@ -235,7 +236,7 @@ a:hover {
 
     a {
         text-decoration: none;
-        color: #000;
+        color: inherit;
     }
 
     /* Ensure links are readable if printed */
