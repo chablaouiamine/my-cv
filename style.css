@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
     --primary-color: #2c3e50;
-    --accent-color: #2980b9;
+    --accent-color: #556066;
     --text-color: #333333;
     --secondary-text-color: #666666;
     --border-color: #e0e0e0;
@@ -67,18 +67,14 @@ a:hover {
     padding-bottom: 20px;
 }
 
-.header-content {
+.header-name-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header-text {
-    flex: 1;
+    margin-bottom: 15px;
 }
 
 .header-photo {
-    margin-left: 20px;
     flex-shrink: 0;
 }
 
@@ -105,6 +101,18 @@ a:hover {
 
 .contact-info p {
     margin-bottom: 4px;
+}
+
+.contact-info i {
+    margin-right: 5px;
+    color: var(--accent-color);
+    width: 14px;
+    text-align: center;
+}
+
+.portfolio-line {
+    text-align: center;
+    margin-top: 8px;
 }
 
 /* Sections */
@@ -252,17 +260,18 @@ a:hover {
         margin: 0;
     }
 
-    .header-content {
-        flex-direction: column-reverse;
-        /* Put photo on top or bottom? Let's put photo on top usually, or keep text top. Let's try column-reverse to put photo on top? No, usually name first is better for ATS/Reading. Let's keep normal column but center align. */
+    .header-name-row {
         flex-direction: column;
         text-align: center;
     }
 
     .header-photo {
-        margin-left: 0;
         margin-top: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+    .contact-info {
+        text-align: center;
     }
 
     .job-header {
