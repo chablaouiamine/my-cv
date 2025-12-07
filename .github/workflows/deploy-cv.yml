@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - f_some_ui_fixes
   workflow_dispatch:
 
 jobs:
