@@ -1,0 +1,46 @@
+name: Sync CV to Portfolio
+
+on:
+  # Trigger when cv.pdf is updated in this repo
+  push:
+    paths:
+      - 'cv.pdf'
+    branches:
+      - main
+      - master
+
+jobs:
+  sync-cv:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout CV repository
+        uses: actions/checkout@v4
+        with:
+          path: cv-repo
+      
+      - name: Checkout Portfolio repository
+        uses: actions/checkout@v4
+        with:
+          repository: chablaouiamine/amine-portfolio
+          token: ${{ secrets.PORTFOLIO_PAT }}
+          path: portfolio-repo
+      
+      - name: Copy CV to Portfolio
+        run: |
+          cp cv-repo/cv.pdf portfolio-repo/assets/cv.pdf
+          # Or wherever you want the CV in your portfolio
+      
+      - name: Commit and Push to Portfolio
+        run: |
+          cd portfolio-repo
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/cv.pdf
+          git diff --staged --quiet || git commit -m "chore: update CV from my-cv repo"
+          git push
+
+# NOTE: To use this workflow, you need to:
+# 1. Create a Personal Access Token (PAT) with 'repo' scope
+# 2. Add it as a secret named 'PORTFOLIO_PAT' in this repository's settings
+# 3. Adjust the path 'assets/cv.pdf' to match your portfolio structure
