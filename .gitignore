@@ -2,7 +2,7 @@
 node_modules/
 
 # Generated Artifacts
-# Note: cv.pdf is NOT ignored because it's auto-generated and committed by GitHub Actions
+*.pdf
 
 # System Files
 .DS_Store
