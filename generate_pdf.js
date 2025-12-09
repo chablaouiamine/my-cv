@@ -41,14 +41,14 @@ async function generatePDF(browser, htmlFile, outputPdf) {
         });
 
         // Generate French version (index.html -> cv-fr.pdf)
-        await generatePDF(browser, 'index.html', 'cv-fr.pdf');
+        await generatePDF(browser, 'index.html', 'cv.pdf');
 
         // Generate English version (index2.html -> cv-en.pdf)
         await generatePDF(browser, 'index2.html', 'cv-en.pdf');
 
         await browser.close();
         console.log('\n✅ Both CV versions generated successfully!');
-        console.log('   - French version: cv-fr.pdf');
+        console.log('   - French version: cv.pdf');
         console.log('   - English version: cv-en.pdf');
     } catch (error) {
         console.error('Error generating PDF:', error);
